@@ -22,7 +22,7 @@ public class Job {
         nextId++;
     }
 
-    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency, String value) {
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
         this.name = name;
         this.employer = employer;
@@ -30,6 +30,9 @@ public class Job {
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
         //this.value = value;
+    }
+
+    public Job(String web_developer, String centene, String s, String s1, String javaScript) {
     }
 
 
