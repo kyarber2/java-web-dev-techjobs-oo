@@ -39,10 +39,65 @@ public class Job {
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
-//    @Override
-//    public String toString() {
-//        return value;
-//    }
+    @Override
+    public String toString() {
+
+        if(getName() == null) {
+           System.out.println("\n" + "ID: " + getId() +
+                    "\nName: Data Not Available" +
+                    "\nEmployer: " + getEmployer() +
+                    "\nLocation: " + getLocation() +
+                    "\nPosition Type: " + getPositionType() +
+                    "\nCore Competency: " + getCoreCompetency() +
+                    "\n");
+        } else if(getEmployer() == null) {
+            System.out.println("\n" + "ID: " + getId() +
+                    "\nName: " + getName() +
+                    "\nEmployer: Data Not Available" +
+                    "\nLocation: " + getLocation() +
+                    "\nPosition Type: " + getPositionType() +
+                    "\nCore Competency: " + getCoreCompetency() +
+                    "\n");
+
+        } else if (getLocation() == null) {
+            System.out.println("\n" + "ID: " + getId() +
+                    "\nName: " + getName() +
+                    "\nEmployer: " + getEmployer() +
+                    "\nLocation: Data Not Available"   +
+                    "\nPosition Type: " + getPositionType() +
+                    "\nCore Competency: " + getCoreCompetency() +
+                    "\n");
+
+        } else if (getPositionType().equals("")) {
+            System.out.println("\n" + "ID: " + getId() +
+                    "\nName: " + getName() +
+                    "\nEmployer: " + getEmployer() +
+                    "\nLocation: " + getLocation() +
+                    "\nPosition Type: Data Not Available"  +
+                    "\nCore Competency: " + getCoreCompetency() +
+                    "\n");
+
+        } else if (getCoreCompetency() ==null) {
+            System.out.println("\n" + "ID: " + getId() +
+                    "\nName: " + getName() +
+                    "\nEmployer: " + getEmployer() +
+                    "\nLocation: " + getLocation() +
+                    "\nPosition Type: " + getPositionType() +
+                    "\nCore Competency: Data Not Available" +
+                    "\n");
+        } else {
+            System.out.println("\n" + "ID: " + getId() +
+                    "\nName: " + getName() +
+                    "\nEmployer: " + getEmployer() +
+                    "\nLocation: " + getLocation() +
+                    "\nPosition Type: " + getPositionType() +
+                    "\nCore Competency: " + getCoreCompetency() +
+                    "\n");
+        }
+      return String;
+    }
+
+
 
     @Override
     public boolean equals(Object o) {  // Two objects are equal if they have the same id.

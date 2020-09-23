@@ -14,6 +14,8 @@ public class JobTest {
     Job test_job3;
     Job test_job4;
     Job test_job5;
+    Job test_job6;
+    Job test_job7;
 
     @Before
     public void createJobObject() {
@@ -67,7 +69,39 @@ public class JobTest {
         assertFalse(test_job4 == test_job5);
     }
 
+    @Before
+    public void createJob6() {
+        test_job6 = new Job ("Database Specialist", new Employer("ABC"), new Location("Rainforest"), new PositionType("Data"), new CoreCompetency("SQL"));
+    }
+    @Test
+    public void testToString(){
+        assertEquals("\n" +
+                "ID:  \n" +
+                "Name: Database Specialist\n" +
+                "Employer: ABC\n" +
+                "Location: Rainforest\n" +
+                "Position Type: Data \n" +
+                "Core Competency: SQL \n" +
+                "\n", test_job6.toString());
+    }
 
+    @Before
+    public void createJob7() {
+        test_job7 = new Job ("Database Specialist", new Employer("ABC"), new Location("Rainforest"), new PositionType(""), new CoreCompetency("SQL"));
+    }
+
+    @Test
+    public void testEmptyField(){
+        assertEquals("\n" +
+                "ID:  \n" +
+                "Name: Database Specialist\n" +
+                "Employer: ABC\n" +
+                "Location: Rainforest\n" +
+                "Position Type: Data Not Available \n" +
+                "Core Competency: SQL \n" +
+                "\n", test_job7.toString());
+        System.out.println(test_job7.toString());
+    }
 
 
 }
