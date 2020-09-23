@@ -29,12 +29,8 @@ public class Job {
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
-        //this.value = value;
-    }
 
-    public Job(String web_developer, String centene, String s, String s1, String javaScript) {
     }
-
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
@@ -42,59 +38,25 @@ public class Job {
     @Override
     public String toString() {
 
-        if(getName() == null) {
-           System.out.println("\n" + "ID: " + getId() +
-                    "\nName: Data Not Available" +
-                    "\nEmployer: " + getEmployer() +
-                    "\nLocation: " + getLocation() +
-                    "\nPosition Type: " + getPositionType() +
-                    "\nCore Competency: " + getCoreCompetency() +
-                    "\n");
-        } else if(getEmployer() == null) {
-            System.out.println("\n" + "ID: " + getId() +
-                    "\nName: " + getName() +
-                    "\nEmployer: Data Not Available" +
-                    "\nLocation: " + getLocation() +
-                    "\nPosition Type: " + getPositionType() +
-                    "\nCore Competency: " + getCoreCompetency() +
-                    "\n");
-
-        } else if (getLocation() == null) {
-            System.out.println("\n" + "ID: " + getId() +
-                    "\nName: " + getName() +
-                    "\nEmployer: " + getEmployer() +
-                    "\nLocation: Data Not Available"   +
-                    "\nPosition Type: " + getPositionType() +
-                    "\nCore Competency: " + getCoreCompetency() +
-                    "\n");
-
-        } else if (getPositionType().equals("")) {
-            System.out.println("\n" + "ID: " + getId() +
-                    "\nName: " + getName() +
-                    "\nEmployer: " + getEmployer() +
-                    "\nLocation: " + getLocation() +
-                    "\nPosition Type: Data Not Available"  +
-                    "\nCore Competency: " + getCoreCompetency() +
-                    "\n");
-
-        } else if (getCoreCompetency() ==null) {
-            System.out.println("\n" + "ID: " + getId() +
-                    "\nName: " + getName() +
-                    "\nEmployer: " + getEmployer() +
-                    "\nLocation: " + getLocation() +
-                    "\nPosition Type: " + getPositionType() +
-                    "\nCore Competency: Data Not Available" +
-                    "\n");
-        } else {
-            System.out.println("\n" + "ID: " + getId() +
-                    "\nName: " + getName() +
-                    "\nEmployer: " + getEmployer() +
-                    "\nLocation: " + getLocation() +
-                    "\nPosition Type: " + getPositionType() +
-                    "\nCore Competency: " + getCoreCompetency() +
-                    "\n");
+        if(name.equals("") || location.equals("") || positionType.equals("") || coreCompetency.equals("")) {
+            name.equals("No Data Available");
+        } else if (employer == null) {
+            employer.equals("No Data Available");
+        } else if (location == null) {
+            location.equals("No Data Available");
+        }else if (positionType.equals("")) {
+            positionType.equals("No Data Available");
+        }else if (coreCompetency == null) {
+            coreCompetency.equals("No Data Available");
         }
-      return String;
+
+      return ("\n" + "ID: " + getId() +
+              "\nName: " + name +
+              "\nEmployer: " + employer +
+              "\nLocation: " + location +
+              "\nPosition Type: " + positionType +
+              "\nCore Competency: " + coreCompetency +
+              "\n");
     }
 
 
