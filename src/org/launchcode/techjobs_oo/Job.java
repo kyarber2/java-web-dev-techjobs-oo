@@ -48,11 +48,6 @@ public class Job {
               "\n");
     }
 
-    private String checkValue(JobField field) {
-        return (field.getValue() == "" || field.getValue() == null) ? "No Data Exists" : field.getValue();
-    }
-
-
     @Override
     public boolean equals(Object o) {  // Two objects are equal if they have the same id.
         if (this == o) return true;
