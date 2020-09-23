@@ -13,6 +13,7 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
+
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
@@ -38,27 +39,18 @@ public class Job {
     @Override
     public String toString() {
 
-        if(name.equals("") || location.equals("") || positionType.equals("") || coreCompetency.equals("")) {
-            name.equals("No Data Available");
-        } else if (employer == null) {
-            employer.equals("No Data Available");
-        } else if (location == null) {
-            location.equals("No Data Available");
-        }else if (positionType.equals("")) {
-            positionType.equals("No Data Available");
-        }else if (coreCompetency == null) {
-            coreCompetency.equals("No Data Available");
-        }
-
-      return ("\n" + "ID: " + getId() +
-              "\nName: " + name +
-              "\nEmployer: " + employer +
-              "\nLocation: " + location +
-              "\nPosition Type: " + positionType +
-              "\nCore Competency: " + coreCompetency +
+        return ("\n" + "ID: " + getId() +
+              "\nName: " + (getName() == "" || getName() == null ? "No Data Exists" : getName()) +
+              "\nEmployer: " + (getEmployer().getValue() == "" || getEmployer() == null ? "No Data Exists" : getEmployer()) +
+              "\nLocation: " + (getLocation().getValue() == "" || getLocation() == null ? "No Data Exists" : getLocation()) +
+              "\nPosition Type: " + (getPositionType().getValue() == "" || getPositionType() == null ? "No Data Exists" : getPositionType())+
+              "\nCore Competency: " + (getCoreCompetency().getValue() == "" || getCoreCompetency() == null ? "No Data Exists" : getCoreCompetency())+
               "\n");
     }
 
+    private String checkValue(JobField field) {
+        return (field.getValue() == "" || field.getValue() == null) ? "No Data Exists" : field.getValue();
+    }
 
 
     @Override
@@ -126,6 +118,8 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+    
+    
 }
 
 
